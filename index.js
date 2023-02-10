@@ -5,7 +5,7 @@ document.querySelector('.hacky-text').addEventListener('mouseover', (event) => {
   let currentIteration = 0;
 
   const interval = setInterval(() => {
-    element.innerText = element.innerText.split('').map((letter, index) => {
+    element.innerText = element.dataset.value.split('').map((letter, index) => {
       if (index < currentIteration) {
         return element.dataset.value[index];
       }
@@ -13,8 +13,9 @@ document.querySelector('.hacky-text').addEventListener('mouseover', (event) => {
       return LETTERS[Math.floor(Math.random() * LETTERS.length)]
     }).join('');
 
-    if (currentIteration >= element.innerText.length) {
+    if (currentIteration >= element.dataset.value.length) {
       clearInterval(interval);
+      element.innerText = element.dataset.value;
     }
 
     currentIteration += 1 / 3;
