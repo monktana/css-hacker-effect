@@ -17,8 +17,42 @@ body {
   background-color: black;
 }
 
-h1 {
+.text-container {
+  position: relative;
+  display: inline-block;
+
+  padding: 0.1rem 0.8rem 0.1rem 0.1rem;
+
+  border-radius: .26rem;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: white;
+
+  opacity: 0;
+}
+
+.hacky-text {
+  position: relative;
+
   color: white;
   font-size: 5rem;
+  font-weight: 650;
   font-family: "Space Mono", monospace;
+  line-height: .94;
+}
+
+.text-container:hover > .background {
+  opacity: 1;
+}
+
+.text-container:hover > .hacky-text {
+  color: black;
 }

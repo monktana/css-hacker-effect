@@ -1,6 +1,6 @@
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-document.querySelector('h1').addEventListener('mouseover', (event) => {
+document.querySelector('.hacky-text').addEventListener('mouseover', (event) => {
   const element = event.target;
   let currentIteration = 0;
 
