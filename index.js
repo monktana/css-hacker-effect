@@ -1,7 +1,6 @@
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-document.querySelector('.hacky-text').addEventListener('mouseover', (event) => {
-  const element = event.target;
+const startHacking = (element) => {
   let currentIteration = 0;
 
   const interval = setInterval(() => {
@@ -20,4 +19,9 @@ document.querySelector('.hacky-text').addEventListener('mouseover', (event) => {
 
     currentIteration += 1 / 3;
   }, 30);
+};
+
+document.querySelector('.text-container').addEventListener('mouseover', (event) => {
+  const element = event.target;
+  [...element.parentElement.getElementsByClassName('hacky-text')].forEach(startHacking);
 });

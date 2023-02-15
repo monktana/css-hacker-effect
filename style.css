@@ -14,6 +14,8 @@ body {
   align-items: center;
   justify-content: center;
 
+  font-family: "Space Mono", monospace;
+  color: white;
   background-color: black;
 }
 
@@ -37,8 +39,6 @@ body {
   background-color: white;
   border-radius: .26rem;
 
-  overflow: hidden;
-
   opacity: 0;
 }
 
@@ -60,11 +60,35 @@ body {
 .hacky-text {
   position: relative;
 
-  color: white;
-  font-size: 5rem;
+  background-color: transparent;
+}
+
+.label {
+  font-size: 6.4rem;
   font-weight: 650;
-  font-family: "Space Mono", monospace;
-  line-height: .94;
+  line-height: .85;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.caption {
+  font-size: .9rem;
+  font-weight: 450;
+  line-height: 1.1;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.extra {
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  margin-left: .6em;
+
+  color: black;
+
+  pointer-events: none;
 }
 
 .text-container:hover > .background {
@@ -73,4 +97,8 @@ body {
 
 .text-container:hover > .hacky-text {
   color: black;
+}
+
+.text-container:hover > .extra {
+  color: white;
 }
