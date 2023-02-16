@@ -11,6 +11,9 @@ body {
   min-height: 100vh;
 
   display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
   align-items: center;
   justify-content: center;
 
@@ -19,13 +22,20 @@ body {
   background-color: black;
 }
 
-.text-container {
+.container {
   position: relative;
   display: inline-block;
 
-  padding: 0.1rem 0.8rem 0.1rem 0.1rem;
+  padding: 0.1rem;
 
-  border-radius: .26rem;
+  font-size: 1.2rem;
+  font-weight: 450;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.container.nav {
+  padding-right: 0.8rem;
 }
 
 .background {
@@ -37,12 +47,15 @@ body {
   width: 100%;
 
   background-color: white;
+}
+
+.container.nav .background {
   border-radius: .26rem;
 
   opacity: 0;
 }
 
-.background::after {
+.container.nav .background::after {
   content: '';
 
   position: absolute;
@@ -57,26 +70,38 @@ body {
   background-color: black;
 }
 
+.container.link .background {
+  display: block;
+
+  transform: scaleX(0);
+  transform-origin: bottom right;
+
+  transition: transform .6s ease;
+}
+
 .hacky-text {
   position: relative;
 
   background-color: transparent;
 }
 
+.container.link .hacky-text {
+  transition: color .8 ease;
+}
+
+.relative {
+  position: relative;
+}
+
 .label {
   font-size: 6.4rem;
   font-weight: 650;
   line-height: .85;
-  text-transform: uppercase;
-  position: relative;
 }
 
 .caption {
   font-size: .9rem;
-  font-weight: 450;
   line-height: 1.1;
-  text-transform: uppercase;
-  position: relative;
 }
 
 .extra {
@@ -91,14 +116,19 @@ body {
   pointer-events: none;
 }
 
-.text-container:hover > .background {
+.container.nav:hover > .background {
   opacity: 1;
 }
 
-.text-container:hover > .hacky-text {
+.container.link:hover > .background {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.container:hover > .hacky-text {
   color: black;
 }
 
-.text-container:hover > .extra {
+.container:hover > .extra {
   color: white;
 }

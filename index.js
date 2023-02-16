@@ -21,7 +21,9 @@ const startHacking = (element) => {
   }, 30);
 };
 
-document.querySelector('.text-container').addEventListener('mouseover', (event) => {
-  const element = event.target;
-  [...element.parentElement.getElementsByClassName('hacky-text')].forEach(startHacking);
+document.querySelectorAll('.container').forEach(element => {
+  element.addEventListener('mouseover', (event) => {
+    const child = event.target;
+    [...child.parentElement.getElementsByClassName('hacky-text')].forEach(startHacking);
+  })
 });
